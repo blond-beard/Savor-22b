@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccf793b7ca1cc645b9cd36d753b8e3c, type: 3}
+  m_Name: APIReference
+  m_EditorClassIdentifier: 
+  url: https://9c-main-rpc-4.nine-chronicles.com/graphql
+  queries:
+  - name: getNodeStatus
+    type: 0
+    query: "query getNodeStatus{\n    nodeStatus{\n        tip{\n            index\n           
+      id\n            hash\n        }\n    }\n}"
+    queryString: nodeStatus
+    returnType: NodeStatusType
+    queryOptions:
+    - stateQuery
+    - state
+    - transferNCGHistories
+    - keyStore
+    - nodeStatus
+    - chainQuery
+    - validation
+    - activationStatus
+    - peerChainState
+    - goldBalance
+    - nextTxNonce
+    - getTx
+    - minerAddress
+    - monsterCollectionStatus
+    - transaction
+    - activated
+    - activationKeyNonce
+    - rpcInformation
+    - actionQuery
+    - actionTxQuery
+    - addressQuery
+    fields:
+    - index: 2
+      name: tip
+      type: BlockHeader
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: bootstrapEnded
+        type: Boolean
+      - name: preloadEnded
+        type: Boolean
+      - name: tip
+        type: BlockHeader
+      - name: topmostBlocks
+        type: BlockHeader
+      - name: stagedTxIds
+        type: TxId
+      - name: stagedTxIdsCount
+        type: Int
+      - name: genesis
+        type: BlockHeader
+      - name: isMining
+        type: Boolean
+      - name: appProtocolVersion
+        type: AppProtocolVersionType
+      - name: subscriberAddresses
+        type: Address
+      - name: subscriberAddressesCount
+        type: Int
+      - name: productVersion
+        type: String
+      - name: informationalVersion
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: index
+      type: Int
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: index
+        type: Int
+      - name: id
+        type: ID
+      - name: hash
+        type: String
+      - name: miner
+        type: Address
+      hasChanged: 0
+    - index: 1
+      name: id
+      type: ID
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: index
+        type: Int
+      - name: id
+        type: ID
+      - name: hash
+        type: String
+      - name: miner
+        type: Address
+      hasChanged: 0
+    - index: 2
+      name: hash
+      type: String
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: index
+        type: Int
+      - name: id
+        type: ID
+      - name: hash
+        type: String
+      - name: miner
+        type: Address
+      hasChanged: 0
+    isComplete: 1
+  mutations: []
+  subscriptions: []
+  loading: 0
